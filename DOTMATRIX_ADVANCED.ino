@@ -441,7 +441,7 @@ void solvePrayers(City c) {
   double hs=getHourAngle(-0.8333,c.lat);
   sunrise_time=zohr_time-hs; maghrib_time=zohr_time+hs;
   float ld=abs(c.lat-declination);
-  float sl=2+tan(ld*D2R);
+  float sl=1+tan(ld*D2R);         //ASR CALCULUATION !!!!!!
   float aa=(pi_val/2.0-atan(sl))*R2D;
   asr_time=zohr_time+getHourAngle(aa,c.lat);
 }
