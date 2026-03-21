@@ -466,5 +466,10 @@ void calculateSunPosition(long JD) {
   float RA=atan2(cos(e*D2R)*sin(L*D2R),cos(L*D2R))*R2D/15.0;
   if(RA<0) RA+=24; if(RA>=24) RA-=24;
   declination=asin(sin(e*D2R)*sin(L*D2R))*R2D;
-  Eqtime=(q/15.0-RA)*60.0;
+  
+  // Normalize the Equation of Time to prevent equinox wrap-around
+  float E = q/15.0 - RA;
+  if (E > 12.0) E -= 24.0;
+  else if (E < -12.0) E += 24.0;
+  Eqtime = E * 60.0;
 }
