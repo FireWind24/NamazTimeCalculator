@@ -22,7 +22,7 @@ float declination, Eqtime;
 double fajr_time, zohr_time, sunrise_time, asr_time, maghrib_time, isha_time;
 
 // --- USER CALIBRATION ---
-const int HIJRI_ADJUSTMENT = -1;
+const int HIJRI_ADJUSTMENT = 0;
 
 // --- SCROLL STATE ---
 int  scrollPage = 0;
